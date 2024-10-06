@@ -1,0 +1,24 @@
+def find_majority_element(arr) :
+    # Phase 1: Finding the candidate for majority element
+    candidate = None
+    count = 0
+
+    for num in arr :
+if count == 0 :
+    candidate = num
+    count += (1 if num == candidate else - 1)
+
+    # Phase 2: Verify if the candidate is indeed the majority element
+    if arr.count(candidate) > len(arr) // 2:
+        return candidate
+    else :
+        return None	
+
+        # Example usage :
+arr = [3, 3, 4, 2, 4, 4, 2, 4, 4]
+majority_element = find_majority_element(arr)
+
+if majority_element :
+    print(f"The majority element is: {majority_element}")
+else:
+print("There is no majority element.")		
